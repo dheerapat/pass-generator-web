@@ -8,6 +8,10 @@ const strings = lower + upper + nums + special;
 let password = ""
 //console.log(typeof (password))
 
+let button = document.getElementById('button');
+let pw = document.getElementById('pw');
+let copy = document.getElementById('copy');
+
 const generatePass = () => {
     let len = 16;
     let ind = 0;
@@ -22,11 +26,8 @@ const generatePass = () => {
     copy.style.visibility = 'visible';
 };
 
-let button = document.getElementById('button');
-let pw = document.getElementById('pw');
-let copy = document.getElementById('copy');
-
 button.onclick = generatePass;
+
 copy.onclick = function () {
     let copied = document.getElementById('pw').innerHTML;
     navigator.clipboard.writeText(copied);
